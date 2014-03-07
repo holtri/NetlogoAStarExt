@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Extension-Name: a-star-nlogo
+Class-Manager: netlogo.smu.AStarExtension
+NetLogo-Extension-API-Version: 5.0
+
