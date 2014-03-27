@@ -32,9 +32,7 @@ public class AStarSearchWithTurtleAvoidance extends AStarSearch {
 		if(successor.id()!= blockedPatch.id()){
 			super.addPatchToOpenList(currentPatch, successor, realValueSuccessor);
 		}
-		else{
-//			_log("turtle obstacle found on patch " + successor);
-		}
+		
 	}
 
 	

@@ -104,17 +104,14 @@ public class AStarSearch extends DefaultReporter {
 	protected void addSuccessorToCandidateList(CandidatePatch currentPatch, Patch successor)
 			throws LogoException, ExtensionException {
 		double realValueSuccessor = currentPatch.getRealValue() + PatchUtil.caldulateEuclideanDistance(currentPatch.getPatch(), successor);
-//		_log(""+(Double)successor.pcolor());
 		int obstacleIndex = ws.world().patchesOwnIndexOf("OBSTACLE");
-//		_log("obstacleIndex: " + obstacleIndex);
+
 		if(obstacleIndex < 0){
 			throw new ExtensionException("Patches need to own boolean variable 'obstacle'");
 		}
-//		_log("value: " + successor.getVariable(obstacleIndex));
-//		if((Double)successor.pcolor() != 15){
+
 		boolean isObstacle = false;
 		if(successor.getVariable(obstacleIndex) instanceof Boolean){
-//			_log("boolean value");
 			isObstacle = (Boolean) successor.getVariable(obstacleIndex);
 		}
 		if(!isObstacle){
@@ -124,7 +121,6 @@ public class AStarSearch extends DefaultReporter {
 
 	protected void addPatchToOpenList(CandidatePatch currentPatch, Patch successor,
 			double realValueSuccessor) throws LogoException {
-//		_log("test");
 		openList.add(new CandidatePatch(successor, targets, realValueSuccessor, currentPatch));
 	}
 
